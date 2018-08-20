@@ -23,5 +23,9 @@ namespace TestWebApp.Models
 
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<TestWebApp.Models.Post> Posts { get; set; }
+
+        public System.Data.Entity.DbSet<TestWebApp.Models.Comment> Likables { get; set; }
     }
 }
