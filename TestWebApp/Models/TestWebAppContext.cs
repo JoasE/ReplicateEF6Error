@@ -26,6 +26,6 @@ namespace TestWebApp.Models
 
         public System.Data.Entity.DbSet<TestWebApp.Models.Post> Posts { get; set; }
 
-        public System.Data.Entity.DbSet<TestWebApp.Models.Comment> Likables { get; set; }
+        public System.Data.Entity.DbSet<TestWebApp.Models.Comment> Comments { get; set; }
     }
 }

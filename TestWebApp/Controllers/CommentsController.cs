@@ -17,16 +17,16 @@ namespace TestWebApp.Controllers
         private TestWebAppContext db = new TestWebAppContext();
 
         // GET: api/Comments
-        public IQueryable<Comment> GetLikables()
+        public IQueryable<Comment> GetComments()
         {
-            return db.Likables;
+            return db.Comments;
         }
 
         // GET: api/Comments/5
         [ResponseType(typeof(Comment))]
         public IHttpActionResult GetComment(int id)
         {
-            Comment comment = db.Likables.Find(id);
+            Comment comment = db.Comments.Find(id);
             if (comment == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace TestWebApp.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Likables.Add(comment);
+            db.Comments.Add(comment);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = comment.Id }, comment);
@@ -89,13 +89,13 @@ namespace TestWebApp.Controllers
         [ResponseType(typeof(Comment))]
         public IHttpActionResult DeleteComment(int id)
         {
-            Comment comment = db.Likables.Find(id);
+            Comment comment = db.Comments.Find(id);
             if (comment == null)
             {
                 return NotFound();
             }
 
-            db.Likables.Remove(comment);
+            db.Comments.Remove(comment);
             db.SaveChanges();
 
             return Ok(comment);
@@ -112,7 +112,7 @@ namespace TestWebApp.Controllers
 
         private bool CommentExists(int id)
         {
-            return db.Likables.Count(e => e.Id == id) > 0;
+            return db.Comments.Count(e => e.Id == id) > 0;
         }
     }
 }

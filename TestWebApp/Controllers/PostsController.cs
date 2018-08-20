@@ -17,7 +17,7 @@ namespace TestWebApp.Controllers
         private TestWebAppContext db = new TestWebAppContext();
 
         // GET: api/Posts
-        public IQueryable<Post> GetLikables()
+        public IQueryable<Post> GetPosts()
         {
             return db.Posts;
         }
