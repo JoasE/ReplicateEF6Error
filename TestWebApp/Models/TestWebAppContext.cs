@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace TestWebApp.Models
 {
@@ -17,6 +13,15 @@ namespace TestWebApp.Models
     
         public TestWebAppContext() : base("name=TestWebAppContext")
         {
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // Give posts and comments dedicated tables.
+            modelBuilder.Entity<Post>().ToTable("Posts");
+            modelBuilder.Entity<Comment>().ToTable("Comments");
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

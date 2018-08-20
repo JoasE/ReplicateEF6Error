@@ -189,7 +189,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Likable.cs" />
+    <Compile Include="Models\Like.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\TestWebAppContext.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
